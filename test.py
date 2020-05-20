@@ -55,5 +55,7 @@ while 1:
         print(response)
         respond(response)
     if 'au revoir' in call:
+        playsound.playsound('jingle_exit.mp3')
         exit()
+    
 
