@@ -39,12 +39,18 @@ def respond(response):
         url = 'https://www.google.com/search?q=meteo'
         wb.get().open(url)
         google_speak('Voila la météo')
+    if 'ferme ta gueule' in response:
+        google_speak('Désolé monsieur je me tais promis')
+    if 'non rien' in response:
+        google_speak('D\'accord')
+    if 'merci' in response: 
+        google_speak('avec plaisir!')
 
 
 while 1:
     call = record_audio()
     if call_assistant in call:
-        google_speak('Que puis-je faire pour vous ?')
+        playsound.playsound('trigger_monique.mp3')
         response = record_audio()
         print(response)
         respond(response)
